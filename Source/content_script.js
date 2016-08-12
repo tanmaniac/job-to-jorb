@@ -6,11 +6,6 @@ function walk(node)
 	// http://is.gd/mwZp7E
 	
 	var child, next;
-	
-	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
-	    || node.classList.indexOf('ace_editor') > -1) {
-		return;
-	}
 
 	switch ( node.nodeType )  
 	{
@@ -35,11 +30,14 @@ function walk(node)
 function handleText(textNode) 
 {
 	var v = textNode.nodeValue;
+    
+    var upperAlts = ["Jorb", "Jaerb", "Jorearb"];
+    var lowerAlts = ["jorb", "jaerb", "jorearb"];
 
-	v = v.replace(/\bThe Cloud\b/g, "My Butt");
-	v = v.replace(/\bThe cloud\b/g, "My butt");
-	v = v.replace(/\bthe Cloud\b/g, "my Butt");
-	v = v.replace(/\bthe cloud\b/g, "my butt");
+	v = v.replace(/\bJob\b/g, upperAlts[Math.floor(Math.random()*3)]);
+	v = v.replace(/\bjob\b/g, lowerAlts[Math.floor(Math.random()*3)]);
+    v = v.replace(/\bJobs\b/g, upperAlts[Math.floor(Math.random()*3)].concat("s"));
+	v = v.replace(/\bjobs\b/g, lowerAlts[Math.floor(Math.random()*3)].concat("s"));
 	
 	textNode.nodeValue = v;
 }

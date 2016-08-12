@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "Cloud To Butt",
-	"version": "1.0",
-	"description": "Replaces the text 'the cloud' with 'my butt'.",
+	"name": "Job to Jorb",
+	"version": "0.3",
+	"description": "Replaces the word 'job' with 'jorb', or some variation of it.",
 	"content_scripts": 
 	[
 		{
